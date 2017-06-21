@@ -18,6 +18,6 @@ export class LoginPage {
   }
 
   navigateToPage(pageName:string): void {
-    pageName === 'InboxPage' ? this.navCtrl.setRoot(pageName) : this.navCtrl.push(pageName);
+    pageName === 'TabsPage' ? this.navCtrl.setRoot(pageName) : this.navCtrl.push(pageName);
   }
 }

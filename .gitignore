@@ -32,4 +32,4 @@ $RECYCLE.BIN/
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
-*.firebase.config.ts
+src/app/app.firebase.config.ts

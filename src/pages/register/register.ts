@@ -17,10 +17,4 @@ export class RegisterPage {
   constructor(private navCtrl: NavController, private navParams: NavParams) {
   }
 
-  register(): void {
-
-    this.navCtrl.setRoot('ProfilePage');
-
-  }
-
 }

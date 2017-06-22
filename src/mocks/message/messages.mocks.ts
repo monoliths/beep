@@ -1,6 +1,6 @@
-import { User } from '../../models/user/user';
+import { User } from '../../models/user/user.interface';
 import { USER_LIST } from '../user/user.mocks';
-import { Message } from '../../models/message/message';
+import { Message } from '../../models/message/message.interface';
 
 
 const userList = USER_LIST;

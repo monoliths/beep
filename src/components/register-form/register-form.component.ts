@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular'
+import { NavController, ToastController } from 'ionic-angular'
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Account } from '../../models/account/account.interface'; 
 
 /**
  * Generated class for the RegisterFormComponent component.
@@ -13,11 +15,28 @@ import { NavController } from 'ionic-angular'
 })
 export class RegisterFormComponent {
 
-  constructor(private navCtrl: NavController) {
+  account = {} as Account;
+
+  constructor(private navCtrl: NavController, private afAuth: AngularFireAuth, private toast:ToastController) {
   }
 
-  register(): void {
-    this.navCtrl.setRoot('ProfilePage');
+  async register() {
+    try {
+      const result  = await 
+        this.afAuth.auth.createUserWithEmailAndPassword(this.account.email, this.account.password)
+        this.toast.create({
+        message: "Account created.",
+        duration: 3000
+      }).present();
+      console.log(result);
+    }
+    catch(e) {
+      console.error(e);
+      this.toast.create({
+        message: e.message,
+        duration: 3000
+      }).present();
+    }
   }
 
 }
